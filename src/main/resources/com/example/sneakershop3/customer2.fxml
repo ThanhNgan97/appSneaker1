@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sneakershop3.Controllers.CustomerController">
+   <children>
+      <AnchorPane fx:id="AnchorPane" layoutY="56.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@Styles/sales.css" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="8.0">
+         <styleClass>
+            <String fx:value="radius" />
+            <String fx:value="shadow" />
+            <String fx:value="white-bg" />
+         </styleClass>
+         <children>
+            <Label fx:id="Customer2Label" layoutX="84.0" layoutY="12.0" text="Customer">
+               <font>
+                  <Font name="Josefin Sans Regular" size="16.0" />
+               </font>
+            </Label>
+            <Button fx:id="button_add" layoutX="168.0" layoutY="344.0" mnemonicParsing="false" onAction="#switchToScene1" style="-fx-background-radius: 10;" styleClass="btn" stylesheets="@Styles/sales.css" text="Add" AnchorPane.rightAnchor="14.0">
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="PLUS" />
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+      <TableView fx:id="menu_tableView" layoutX="10.0" layoutY="10.0" onSort="#menuShowData" prefHeight="292.0" prefWidth="223.0" style="-fx-background-radius: 10;" styleClass="table-view1" stylesheets="@Styles/sales.css" AnchorPane.bottomAnchor="58.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="50.0">
+         <columns>
+            <TableColumn fx:id="clo_cusName" prefWidth="115.33331513404846">
+               <graphic>
+                  <Label fx:id="menu_col_productName1" text="Number Phone">
+                     <font>
+                        <Font name="Josefin Sans Regular" size="10.0" />
+                     </font>
+                     <padding>
+                        <Insets right="15.0" />
+                     </padding>
+                  </Label>
+               </graphic>
+            </TableColumn>
+            <TableColumn fx:id="clo_numName" prefWidth="104.00000762939453">
+               <graphic>
+                  <Label fx:id="menu_col_productName" text="Customer Name">
+                     <font>
+                        <Font name="Josefin Sans Regular" size="10.0" />
+                     </font>
+                     <padding>
+                        <Insets right="10.0" />
+                     </padding>
+                  </Label>
+               </graphic>
+            </TableColumn>
+         </columns>
+         <padding>
+            <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+         </padding>
+      </TableView>
+   </children>
+</AnchorPane>

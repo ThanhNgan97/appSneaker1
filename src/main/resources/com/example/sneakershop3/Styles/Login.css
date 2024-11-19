@@ -1,0 +1,65 @@
+/* Định dạng cho VBox chứa các thành phần */
+.vbox {
+    -fx-background-color: white;
+    -fx-background-radius: 18px;
+    -fx-alignment: center; /* Căn giữa các thành phần bên trái */
+    -fx-padding: 30 50 30 50; /* Cách biên trên, phải, dưới, trái */
+    -fx-spacing: 10; /* Khoảng cách giữa các thành phần */
+}
+
+/* Định dạng cho Text đầu tiên (Hello, Admin) */
+.text-title1 {
+    -fx-font-family: 'Josefin Sans'; /* Đặt font chữ là Arial */
+    -fx-font-size: 40px; /* Cỡ chữ lớn cho tiêu đề */
+    -fx-fill: #000000; /* Màu chữ là đen */
+}
+.text-title2 {
+    -fx-font-family: 'Josefin Sans'; /* Đặt font chữ là Arial */
+    -fx-font-size: 20px; /* Cỡ chữ lớn cho tiêu đề */
+    -fx-fill: #000000; /* Màu chữ là đen */
+}
+
+/* Định dạng cho Text thứ hai (Welcome back) */
+.text2 {
+    -fx-font-size: 15px; /* Cỡ chữ nhỏ hơn cho phần phụ đề */
+    -fx-fill: #666666; /* Màu chữ là xám nhạt */
+    -fx-translate-y: 5px;
+}
+
+/* Định dạng cho TextField (Enter password) */
+.password-field {
+    -fx-background-radius: 15px; /* Bo tròn góc của ô nhập liệu */
+    -fx-background-color: #f0f0f0; /* Màu nền của ô nhập liệu */
+    -fx-padding: 10px; /* Thêm khoảng cách trong ô nhập liệu */
+    -fx-border-color: transparent; /* Không có đường viền */
+    -fx-pref-width: 600px; /* Chiều rộng cố định của ô nhập liệu */
+}
+
+/* Định dạng cho Button (Login) */
+.button {
+    -fx-background-color: #4b9cd3; /* Màu nền cho nút */
+    -fx-background-radius: 20px; /* Bo tròn góc của nút */
+    -fx-text-fill: white; /* Màu chữ là trắng */
+    -fx-padding: 10px 20px; /* Khoảng cách giữa chữ và viền nút */
+    -fx-font-size: 20px; /* Cỡ chữ của nút */
+    -fx-font-weight: bold; /* Chữ in đậm cho nút */
+    -fx-pref-width: 120px; /* Chiều rộng cố định của nút */
+    -fx-pref-height: 40px;
+    -fx-alignment: center; /* Căn chữ ở giữa nút */
+    -fx-translate-y: 20px; /* Đẩy nút xuống 20px */
+}
+
+.button:hover{
+    -fx-cursor: hand;
+    -fx-background-color: #357ABD;
+}
+
+.err_lbl {
+    -fx-text-fill: #FF0000;
+}
+
+/* Định dạng tổng thể cho phần nền của AnchorPane */
+.anchor-pane {
+    -fx-background-color: white; /* Màu nền là trắng */
+    -fx-padding: 20px; /* Khoảng cách nội dung với viền */
+}

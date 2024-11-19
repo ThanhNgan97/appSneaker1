@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@Styles/Login.css" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sneakershop3.Controllers.LoginController">
+   <ImageView fitHeight="440.0" fitWidth="263.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@Image/LoginBackground.jpg" />
+      </image>
+   </ImageView>
+   <VBox layoutX="233.0" layoutY="-1.0" prefHeight="400.0" prefWidth="383.0" styleClass="vbox" stylesheets="@Styles/Login.css">
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-title1" text="Hello, User" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-title2" text="Welcome back" />
+      <HBox prefHeight="22.0" prefWidth="318.0">
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text2" text="Enter password" />
+      </HBox>
+      <PasswordField fx:id="password_fld" prefHeight="40.0" prefWidth="168.0" promptText="  Enter password..." styleClass="table-view1" stylesheets="@Styles/sales.css" />
+      <Button fx:id="login_btn" mnemonicParsing="false" onAction="#loginBtn" styleClass="btn" stylesheets="@Styles/sales.css" text="Login" />
+   </VBox>
+</AnchorPane>

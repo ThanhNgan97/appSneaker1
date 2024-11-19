@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1080.0" stylesheets="@Styles/sales.css" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sneakershop3.Controllers.SalesController">
+    <children>
+      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="600.0" prefWidth="240.0" styleClass="menu_form" stylesheets="@Styles/TabMenu.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox alignment="CENTER" layoutX="4.0" prefHeight="200.0" prefWidth="240.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <FontAwesomeIconView fill="#fffefe" glyphName="USER" size="70" text="" />
+                  <Label text="Welcome," textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="78.0" layoutY="84.0" text="Admin" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Line endX="200.0" startY="0.592877984046936" stroke="#1900a6" />
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" layoutX="2.0" layoutY="201.0" prefHeight="360.0" prefWidth="240.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="200.0">
+               <children>
+                  <Button fx:id="dashboard_btn" mnemonicParsing="false" onAction="#handleDashboardPage" prefHeight="45.0" prefWidth="200.0" styleClass="menu_form_btn" text="Dashboard" textFill="WHITE">
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="BAR_CHART" size="25" />
+                     </graphic>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="products_btn" mnemonicParsing="false" onAction="#handleProductPage" prefHeight="45.0" prefWidth="200.0" styleClass="menu_form_btn" text="Products" textFill="WHITE">
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="ARCHIVE" size="25" />
+                     </graphic>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="sales_btn" mnemonicParsing="false" prefHeight="45.0" prefWidth="200.0" styleClass="menu_form_btn" text="Sales" textFill="WHITE">
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="SHOPPING_CART" size="25" />
+                     </graphic>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+            <Button fx:id="signout_btn" layoutX="20.0" layoutY="545.0" mnemonicParsing="false" onAction="#signoutBtn" textFill="#3170ac">
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="SIGN_OUT" size="2em" styleClass="logout_btn" />
+               </graphic>
+               <styleClass>
+                  <String fx:value="logout_btn" />
+                  <String fx:value="shadow" />
+               </styleClass>
+            </Button>
+            <Label layoutX="70.0" layoutY="547.0" text="Sign Out" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+        <AnchorPane layoutX="-207.0" layoutY="3.0" prefHeight="602.0" prefWidth="840.0" AnchorPane.rightAnchor="0.0">
+            <children>
+                <AnchorPane fx:id="menu_form" prefHeight="571.0" prefWidth="535.0" stylesheets="@Styles/sales.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0">
+                    <styleClass>
+                        <String fx:value="radius" />
+                        <String fx:value="shadow" />
+                        <String fx:value="white-bg" />
+                    </styleClass>
+                    <children>
+                        <ComboBox fx:id="categoryComboBox" cache="true" layoutX="35.0" layoutY="27.0" prefHeight="40.0" prefWidth="235.0" promptText="List of Category" styleClass="table-view2" stylesheets="@Styles/sales.css" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="15.0">
+                            <opaqueInsets>
+                                <Insets />
+                            </opaqueInsets>
+                        </ComboBox>
+                        <ComboBox fx:id="brandComboBox" cache="true" layoutX="286.0" layoutY="15.0" onAction="#brandListCoboBox" prefHeight="40.0" prefWidth="235.0" promptText="Brand List" styleClass="table-view2" stylesheets="@Styles/sales.css" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="15.0">
+                            <opaqueInsets>
+                                <Insets />
+                            </opaqueInsets>
+                        </ComboBox>
+                        <FontAwesomeIconView fill="#484848" glyphName="SEARCH" layoutX="479.0" layoutY="98.0" size="16" />
+                        <TextField fx:id="textfield_search" layoutX="15.333333333333334" layoutY="70.0" prefHeight="40.0" prefWidth="505.0" promptText="  Search by Code/Name" styleClass="table-view3" stylesheets="@Styles/sales.css" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+                            <padding>
+                                <Insets left="12.0" />
+                            </padding>
+                        </TextField>
+                  <ScrollPane fx:id="ScrollPane" layoutX="15.0" layoutY="121.0" prefHeight="458.0" prefWidth="515.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                     <content>
+                        <GridPane fx:id="menu_gridPane" prefHeight="456.0" prefWidth="513.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                        </GridPane>
+                     </content>
+                  </ScrollPane>
+                    </children>
+                </AnchorPane>
+                <AnchorPane layoutX="556.0" layoutY="15.0" prefHeight="571.0" prefWidth="284.0" stylesheets="@Styles/sales.css" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+                    <styleClass>
+                        <String fx:value="radius" />
+                        <String fx:value="shadow" />
+                        <String fx:value="white-bg" />
+                    </styleClass>
+                    <children>
+                        <TableView fx:id="menu_tableView" onSort="#menuShowData" prefHeight="200.0" prefWidth="278.0" style="-fx-background-radius: 10;" stylesheets="@Styles/sales.css" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                            <columns>
+                                <TableColumn fx:id="colProductName" prefWidth="114.44446086883545">
+                                    <graphic>
+                                        <Label fx:id="menu_col_productName" prefHeight="19.0" prefWidth="111.0" text="Product Name">
+                                            <font>
+                                                <Font name="Josefin Sans Regular" size="13.0" />
+                                            </font>
+                                        </Label>
+                                    </graphic>
+                                </TableColumn>
+                                <TableColumn fx:id="colQuantity" prefWidth="78.44445037841797">
+                           <graphic>
+                              <Label prefHeight="19.0" prefWidth="74.0" text="Quantity">
+                                 <font>
+                                    <Font name="Josefin Sans Regular" size="13.0" />
+                                 </font>
+                              </Label>
+                           </graphic>
+                                </TableColumn>
+                                <TableColumn fx:id="colPrice" prefWidth="84.88893127441406">
+                                    <graphic>
+                                        <Label fx:id="menu_col_price" prefHeight="19.0" prefWidth="83.0" text="Price($)">
+                                            <font>
+                                                <Font name="Josefin Sans Regular" size="13.0" />
+                                            </font>
+                                 <padding>
+                                    <Insets right="10.0" />
+                                 </padding>
+                                        </Label>
+                                    </graphic>
+                                </TableColumn>
+                        <TableColumn fx:id="colSize" prefWidth="78.44445037841797">
+                           <graphic>
+                              <Label prefHeight="19.0" prefWidth="74.0" text="Size">
+                                 <font>
+                                    <Font name="Josefin Sans Regular" size="13.0" />
+                                 </font>
+                              </Label>
+                           </graphic>
+                        </TableColumn>
+                            </columns>
+                            <padding>
+                                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                            </padding>
+                     <styleClass>
+                        <String fx:value="table-view1" />
+                        <String fx:value="table-view3" />
+                     </styleClass>
+                        </TableView>
+                        <Group layoutX="14.0" layoutY="326.0">
+                            <children>
+                                <Label fx:id="menu_total" layoutY="1.0" text="Total: " textFill="#5c5c5c">
+                                    <font>
+                                        <Font name="Josefin Sans Regular" size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="totalPrice" layoutX="50.0" text="\$0.0" textFill="#5c5c5c">
+                                    <font>
+                                        <Font name="Josefin Sans Regular" size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="menu_amount" layoutX="3.0" layoutY="31.0" text="Amount: " textFill="#5c5c5c">
+                                    <font>
+                                        <Font name="Josefin Sans Regular" size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="menu_change" layoutX="4.0" layoutY="63.0" text="Change:" textFill="#5c5c5c">
+                                    <font>
+                                        <Font name="Josefin Sans Regular" size="18.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="textfieldAmount" layoutX="79.0" layoutY="31.0" prefHeight="25.0" prefWidth="119.0" styleClass="table-view1" stylesheets="@Styles/sales.css">
+                           <font>
+                              <Font name="Josefin Sans Regular" size="12.0" />
+                           </font></TextField>
+                                <Label fx:id="changesPrice" layoutX="76.0" layoutY="63.0" text="\$0.0" textFill="#5c5c5c">
+                                    <font>
+                                        <Font name="Josefin Sans Regular" size="18.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </Group>
+                        <Group layoutX="27.0" layoutY="445.0">
+                            <children>
+                                <Button fx:id="menu_payNowBtn" layoutX="135.0" layoutY="66.0" mnemonicParsing="false" onAction="#payNowBtn" prefHeight="33.0" prefWidth="107.0" styleClass="btn" stylesheets="@Styles/sales.css" text="Pay Now">
+                                    <font>
+                                        <Font name="Josefin Sans Regular" size="64.0" />
+                                    </font>
+                                    <graphic>
+                                        <FontAwesomeIconView glyphName="SHOPPING_CART" size="18" styleClass="logo" wrappingWidth="27.0" />
+                                    </graphic>
+                                </Button>
+                                <Button fx:id="menu_removeBtn" layoutX="-11.0" layoutY="66.0" mnemonicParsing="false" onAction="#removeBtn" prefHeight="33.0" prefWidth="110.0" stylesheets="@Styles/sales.css" text="   Remove">
+                                    <font>
+                                        <Font name="Josefin Sans Regular" size="64.0" />
+                                    </font>
+                                    <styleClass>
+                                        <String fx:value="btn" />
+                                        <String fx:value="logo" />
+                                    </styleClass>
+                                    <graphic>
+                                        <FontAwesomeIconView fill="WHITE" glyphName="TRASH" size="18" text="" />
+                                    </graphic>
+                                </Button>
+                        <Button fx:id="menu_payNowBtn1" layoutX="42.0" layoutY="19.0" mnemonicParsing="false" onAction="#switchToScene2" prefHeight="33.0" prefWidth="152.0" styleClass="btn" stylesheets="@Styles/sales.css" text="Customer">
+                           <font>
+                              <Font name="Josefin Sans Regular" size="64.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIconView glyphName="USER" size="18" styleClass="logo" wrappingWidth="27.0" />
+                           </graphic>
+                        </Button>
+                            </children>
+                        </Group>
+                        <Group layoutX="31.0" layoutY="226.0">
+                            <children>
+                                <Rectangle arcHeight="15.0" arcWidth="15.0" fill="WHITE" height="80.0" layoutX="-18.0" layoutY="-5.0" stroke="#78b0cf" strokeType="INSIDE" strokeWidth="2.0" width="260.0" />
+                                <Label layoutX="2.0" layoutY="3.0" text="Barcode" textFill="#5c5c5c">
+                                    <font>
+                                        <Font name="Josefin Sans Regular" size="18.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="txtBarcode" layoutX="38.0" layoutY="34.0" prefHeight="27.0" prefWidth="149.0" styleClass="table-view1" />
+                            </children>
+                        </Group>
+                  <Label fx:id="menu_phoneNumber" layoutX="20.0" layoutY="419.0" text="PhoneNumber:" textFill="#5c5c5c">
+                     <font>
+                        <Font name="Josefin Sans Regular" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="textfieldphoneNumber" layoutX="147.0" layoutY="418.0" prefHeight="25.0" prefWidth="119.0" styleClass="table-view1" stylesheets="@Styles/sales.css">
+                     <font>
+                        <Font name="Josefin Sans Regular" size="12.0" />
+                     </font>
+                  </TextField>
+                    </children>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
